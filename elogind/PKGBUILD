@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=234.4
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('i686' 'x86_64' 'armv7h')
 url="https://github.com/elogind/elogind"
@@ -34,7 +34,8 @@ build() {
         --with-rootlibdir=/usr/lib \
         --with-udevrulesdir=/usr/lib/udev/rules.d \
         --with-rootlibexecdir=/usr/lib/elogind \
-        --with-cgroup-controller=openrc
+        --with-cgroup-controller=openrc \
+        --without-kill-user-processes
     make
 }
 
